@@ -1,5 +1,3 @@
-
-
 CXXFLAGS += -c -Wall $(shell pkg-config --cflags opencv)
 LDFLAGS += $(shell pkg-config --libs --static opencv)
 
@@ -10,4 +8,4 @@ video: video.o; $(CXX) $< -o $@ $(LDFLAGS)
 
 %.o: %.cpp; $(CXX) $< -o $@ $(CXXFLAGS)
 
-clean: ; rm -f example.o opencv_example
+clean: ; rm -f *.o image video
